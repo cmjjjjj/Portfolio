@@ -156,7 +156,7 @@ nav ul.sub-nav li a:hover {
 
 /* 다음 섹션 영역 */
 .next-section {
-    height: 110vh;
+    height: 850px;
     padding-top: 300px; /* Divider 높이만큼 여백을 줌 */
     position: relative;
     background: #1f2020;  /* 원하는 색상으로 변경 */
@@ -265,7 +265,7 @@ video {
 /* 디자인 섹션 */
 .About {
   background-color: #1d1d1d;
-  height: 150vh;
+  height: 80vh;
   padding-top: 100px; /* 이걸로 여백 주기 */
 }
 
@@ -278,7 +278,7 @@ video {
   
   .section-inner {
     width: 100%;
-    min-height:100vh;
+    min-height:50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -382,7 +382,7 @@ video {
 }
 
 .info p{
-    margin: 20px;
+  margin: 20px;
 }
 
 
