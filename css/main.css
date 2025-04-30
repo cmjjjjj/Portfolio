@@ -1,0 +1,404 @@
+@charset "utf-8";
+
+:root {
+    --font-kr: 'SUIT', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-kr);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, nav, .en-text {
+    font-family: var(--font-en);
+}
+
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 헤더 영역 */
+header {
+    background-color: #1f2020;
+    padding: 30px 40px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+  font-weight: bold;
+  color: #ffe500;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+/* 메인 메뉴 */
+nav ul.main-nav {
+    display: flex;
+    gap: 60px;
+}
+
+nav ul.main-nav > li {
+    position: relative;
+}
+
+nav ul.main-nav > li > a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul.main-nav > li > a:hover {
+    color: #00c9ff;
+}
+
+/* 서브 네비게이션 - 가로 한줄, hover 시에만 보이게 */
+nav ul.sub-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-align: center;
+    width: 200px;         /* ← 원하는 크기로 고정! */
+    z-index: 100;
+}
+nav ul.main-nav > li:hover > ul.sub-nav {
+    display: flex;
+}
+nav ul.sub-nav li {
+    padding: 5px 0;
+}
+nav ul.sub-nav li a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;         /* 링크가 상자 전체를 채우도록 */
+    box-sizing: border-box;
+}
+nav ul.sub-nav li a:hover {
+    color: #00c9ff;
+}
+
+
+/* Hero 영역 */
+.hero {
+    background-color: #000000;
+    background-image: url('../img/main/main_bmg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.hero_content {
+    text-align: left;
+}
+
+.hero-title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 내부 요소(제목, 세로선) 모두 가운데 정렬 */
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;   /* 가운데 정렬 */
+}
+
+.hero-title span {
+    opacity: 0;
+    display: block;
+    transition: opacity 0.7s;
+}
+
+.hero-divider {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 200px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+.hero-divider.visible {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+
+/* 다음 섹션 영역 */
+.next-section {
+    height: 110vh;
+    padding-top: 300px; /* Divider 높이만큼 여백을 줌 */
+    position: relative;
+    background: #1f2020;  /* 원하는 색상으로 변경 */
+    min-height: 400px;
+    padding-top: 100px;   /* 세로선과 자연스럽게 이어지도록 위쪽 여백 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.next-section h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: -20px;  /* 위로 살짝 올리기 */
+}
+
+.next-section h2 + span {
+    color: #cccccc;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    display: block;
+}
+
+
+/* 다음 섹션 내용 */
+.next-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+}
+
+.awards-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.award-col {
+    flex: 1;
+    color: #ffffff;
+}
+
+.award-title {
+    color: #00c9ff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.more-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #1f2020;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.more-btn:hover .plus-icon {
+    transform: rotate(90deg);
+    background-color: #00c9ff;
+    color: #ffffff;
+}
+
+.more_text{
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+video {
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  video:hover {
+    transform: scale(1.1); /* 1.2배 확대 */
+  }
+  
+/* 디자인 섹션 */
+.About {
+  background-color: #1d1d1d;
+  height: 150vh;
+  padding-top: 100px; /* 이걸로 여백 주기 */
+}
+
+.About h2 {
+  color: #00c9ff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+  
+  .section-inner {
+    width: 100%;
+    min-height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+  .accordion-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .accordion {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .accordion li {
+    color: #ffffff; /* 글자 흰색 */
+  }
+  
+  /* 불필요한 .focus는 삭제하거나 아래처럼 처리 */
+  .focus {
+    display: none;
+  }
+  
+
+  .accordion *{
+    transition: 0.5s;
+  }
+
+  .accordion li {
+    min-height: 400px; /* 기본 최소 높이 */
+    height: auto; /* 콘텐츠에 따라 높이 결정 */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    border-right: none;
+  }
+  
+  .accordion li:nth-child(1),
+  .accordion li:nth-child(2) {
+  border-right: 0.5px solid #dddddd;
+}
+
+  .accordion:hover li{
+    flex: 1;
+  }
+
+  .accordion li:hover{
+    flex: 2;
+  }
+  
+  .About a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+/* 이미지 크기는 고정 */
+.number img {
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+
+.number img:hover {
+  transform: scale(1.03); /* 살짝만 확대 */
+}
+
+.accordion li .number {
+  font-size: 12rem;
+  position: relative;
+  /* 기존 transform 제거 */
+  margin-bottom: 40px; /* 이미지와 h2 사이 여백 확보 */
+}
+
+.accordion li .number:after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  bottom: -40px;
+  left: 0;
+}
+
+.info h2{
+    margin-top: 5vh;
+    color: #00c9ff;
+}
+
+.info p{
+    margin: 20px;
+}
+
+
+footer{
+    padding: 2rem;
+    background-color: #000000;
+    position: relative;
+    color: #ffffff;
+    height: 100px;
+  }
+
+  .email{
+    font-size: 0.8rem;
+  }
+
+  .email a{
+    text-decoration: none;
+    color: #fff;
+  }

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer. CHOI</title>
+    <link href="./css/main.css" rel="stylesheet">
+    <script src="./js/main.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/suit-webfont@1.0.1/dist/suit.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- 로고 추가 -->
+        <div class="logo">
+          Designer. CHOI
+          <!-- <img src="path/to/logo.png" alt="Logo" class="logo-img"> -->
+        </div>
+        
+        <!-- 상단 메뉴 영역 -->
+        <nav>
+            <ul class="main-nav">
+                <li>
+                    <a href="#">PROJECT</a>
+                    <ul class="sub-nav">
+                        <li><a href="#">포스터/카드뉴스</a></li>
+                        <li><a href="#">영상</a></li>
+                        <li><a href="#">VLOZA 쇼핑몰 기획</a></li>
+                        <li><a href="#">UX/UI 앱 서비스 기획</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">WORKS</a>
+                    <ul class="sub-nav">
+                        <li><a href="#">상세페이지</a></li>
+                        <li><a href="#">배너</a></li>
+                        <li><a href="#">앱 리뉴얼</a></li>
+                        <li><a href="#">광고소재</a></li>
+                        <li><a href="#">카드뉴스</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">CONTEST</a>
+                    <ul class="sub-nav">
+                        <li><a href="#">개인 공모전</a></li>
+                        <li><a href="#">단체 공모전</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ABOUT ME</a>
+                    <ul class="sub-nav">
+                        <li><a href="#">자기소개</a></li>
+                        <li><a href="#">학력/경력</a></li>
+                        <li><a href="#">자격증</a></li>
+                        <li><a href="#">수상이력</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero_content">
+          <div class="hero-title-wrap">
+            <h1 class="hero-title">
+              <span>클라이언트의 니즈를 실용적인</span><br>
+              <span>디자인으로 풀어내는 디자이너입니다</span>
+            </h1>
+            <div class="hero-divider"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-section">
+        
+        <h2>공모전 참가</h2>
+        <span>교내·교외 공모전</span>
+        <div class="awards-flex">
+          <!-- 왼쪽: 교내 공모전 -->
+          <div class="award-col left">
+            <div class="video-area">
+              <a href="#contest">
+              <video autoplay muted loop playsinline>    
+                <source src="img/main/main_영상ai.mp4" type="video/mp4" loop autoplay playsinline>
+                Your browser does not support the video tag.
+              </video>
+              <!-- 또는 <img src="썸네일1.jpg" alt="교내 영상 썸네일"> -->
+            </a>
+            </div>
+            <span class="award-title">교내 공모전 "대상"</span>
+            <p>2024.06.05.<br>
+                생성형 AI를 활용한 크리에이티브 공모전 “대상”<br>
+                주최: 인하공업전문대학</p>
+          </div>
+
+      
+          <!-- 가운데 세로선 -->
+          <div class="vertical-line"></div>
+      
+          <!-- 오른쪽: 교외 공모전 -->
+          <div class="award-col right">
+            <div class="video-area">
+              <a href="#contest">
+              <video autoplay muted loop playsinline>
+                <source src="img/main/main_영상환경.mp4" type="video/mp4" loop autoplay playsinline>
+                Your browser does not support the video tag.
+              </video>
+            </a>
+            </div>
+            <span class="award-title">교외 공모전 참가</span>
+              <p>2024 기후위기 UCC 공모전<br>
+                주최: 아시아기후변화교육센터</p>
+          </div>
+        </div>
+        <button class="more-btn" onclick="toggleMore()">
+            <span class="plus-icon">+</span>
+          </button>
+        <span class="more_text">공모전 더보기</span>
+       </section>
+
+       <section class="About">
+        <div class="accordion-wrapper">
+          <h2>Design</h2>
+          <div class="section-inner">
+            <div class="accordion-content">
+              <ul class="accordion">
+              <li>
+                <div class="number">
+                  <a href="#">
+                    <img src="img/main/상세.png" alt="상세페이지"></div>
+                <div class="info">
+                  <h2>상세페이지</h2>
+                  <p>설명절 선물세트 기획전에 맞춰 기획</p>
+                </a>
+                </div>
+              </li>
+              <li>
+                <div class="number">
+                  <a href="#">
+                    <img src="img/main/배너.png" alt="배너"></div>
+                <div class="info">
+                  <h2>배너</h2>
+                  <p>계절 배너 중 가을에 맞춘 이미지</p>
+                </a>
+                </div>
+              </li>
+              <li>
+                <div class="number">
+                  <a href="#">
+                  <img src="img/main/카드뉴스.png" alt="포스터&카드뉴스"></div>
+                <div class="info">
+                  <h2>포스터&카드뉴스</h2>
+                  <p>2025 대학 생활 참인성 캠프 카드뉴스</p>
+                </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </section>
+        
+        <footer class="footer">
+          <div class="footer-inner">
+            <p>&copy; 2025 Designer. CHOI Portfolio</p>
+            <p class="email">Contact: <a href="errr48@naver.com">errr48@naver.com</a></p>
+          </div>
+        </footer>
+        
+</body>
+</html>
