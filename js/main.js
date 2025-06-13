@@ -21,34 +21,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }, idx * 900); // 텍스트 순차 등장
   });
 
-  // 👉 공모전 더보기 버튼 알림
-  window.toggleMore = function () {
-    alert("더보기 기능은 아직 구현되지 않았습니다.");
-  };
+// 기존 코드는 그대로 두고, 스킬 관련 부분만 교체
 
-  // 👉 Skills 스크롤 감지 애니메이션
-  const skillSection = document.querySelector(".skills");
-  const progressBars = document.querySelectorAll(".progress");
-  let skillAnimated = false;
+// 👉 Skills 스크롤 감지 애니메이션 (개선된 버전)
+const skillSection = document.querySelector(".skills");
+const skillItems = document.querySelectorAll(".skill-item");
+const progressBars = document.querySelectorAll(".progress-bar");
+let skillAnimated = false;
 
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top <= window.innerHeight && rect.bottom >= 0;
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0;
+}
+
+function animateSkillBars() {
+  if (skillAnimated || !skillSection) return;
+
+  if (isInViewport(skillSection)) {
+    skillItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('animated');
+        const progressBar = item.querySelector('.progress-bar');
+        const percentage = progressBar.getAttribute('data-percentage');
+        progressBar.style.width = percentage + '%';
+      }, index * 200); // 순차적으로 애니메이션
+    });
+    skillAnimated = true;
   }
+}
 
-  function animateSkillBars() {
-    if (skillAnimated) return;
-
-    if (isInViewport(skillSection)) {
-      progressBars.forEach(bar => {
-        const percent = bar.getAttribute("data-rate");
-        bar.style.width = percent + "%";
-      });
-      skillAnimated = true;
-    }
+// 스크롤 이벤트에 디바운싱 적용
+let scrollTimeout;
+window.addEventListener("scroll", () => {
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout);
   }
+  scrollTimeout = setTimeout(animateSkillBars, 10);
+});
 
-  window.addEventListener("scroll", animateSkillBars);
+// 페이지 로드 시에도 체크
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(animateSkillBars, 500);
+});
+
 
   // 👉 부드러운 스크롤 이동 (About 섹션)
   const scrollBtn = document.querySelector(".scroll-to-about");
